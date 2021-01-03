@@ -22,12 +22,12 @@ function generatePassword() {
       charTotal +=passParameter.Special;}
       
   console.log(charTotal); //take out when done.
-  
+
   var finalPassword="";
   for (let i = 0; i < passLength; i++) {
     finalPassword+=charTotal[Math.floor(Math.random()*passLength+15)];  //WHY DO I NEED + NUMBER? AND WHY DOES THE PASSWORD CONTAIN ONLY LOWER CASE LETTERS IF THAT NUMBER IS 0?
   }
-  return finalPassword;
+  return finalPassword; //ALTHOUGH chatTotal INCLUDES ALL POSSIBLE CHARACTERS, FOR A 10 CHARACTER PASSWORD, IT REPEATEDLY HAS ONLY LOWER CASE LETTERS. wHY?
 }
 
 var passParameter = {

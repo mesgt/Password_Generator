@@ -6,58 +6,50 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password"); //WHY querySelector?
-  passwordText.value = password; 
-}
-
-function generatePassword() {
-  var charTotal = "";
-    if (charLower===true) {
-      charTotal += passParameter.LowerCase;}
-    if (charUpper===true) {
-      charTotal += passParameter.UpperCase;}
-    if (charNumber===true) {
-      charTotal +=passParameter.Numbers;}
-    if (charSpecial===true) {
-      charTotal +=passParameter.Special;}
-      
-  console.log(charTotal); //take out when done.
-
-  var finalPassword="";
-  for (let i = 0; i < passLength; i++) {
-    finalPassword+=charTotal[Math.floor(Math.random()*passLength+15)];  //WHY DO I NEED + NUMBER? AND WHY DOES THE PASSWORD CONTAIN ONLY LOWER CASE LETTERS IF THAT NUMBER IS 0?
-  }
-  return finalPassword; //ALTHOUGH chatTotal INCLUDES ALL POSSIBLE CHARACTERS, FOR A 10 CHARACTER PASSWORD, IT REPEATEDLY HAS ONLY LOWER CASE LETTERS. wHY?
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 var passParameter = {
-  LowerCase : "qwertyuiopasdfghjklzxcvbnm",
-  UpperCase : "QWERTYUIOPASDFGHJKLZXCVBNM",
-  Numbers : "1234567890",
-  Special : "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+  LowerCase: "qwertyuiopasdfghjklzxcvbnm",
+  UpperCase: "QWERTYUIOPASDFGHJKLZXCVBNM",
+  Numbers: "1234567890",
+  Special: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
 }
 
-//User selects parameters.
-function getPassLength() {
+function generatePassword() {
   var pLength = prompt("Select the length of your password by typing in a number between 8 and 128.");
-    if ((pLength < 8) || (pLength > 128)) {
-      alert("Please select appropriate number of characters for your password.");}
-    else {
-      alert("You have selected your password to be " + pLength + " characters long.");}
-    return pLength
-}
-passLength=getPassLength()
+  if ((pLength < 8) || (pLength > 128)) {
+    alert("Please select appropriate number of characters for your password.");
+    return;
+  }
+  else {
+    alert("You have selected your password to be " + pLength + " characters long.");
+    var charLower = confirm("Would like a lower case letter in your password?");
+    var charUpper = confirm("Would like an upper case letter in your password?");
+    var charNumber = confirm("Would like a number in your password?");
+    var charSpecial = confirm("Would like a special character in your password?");
+    var charTotal = "";
+  }
 
-var charLower = confirm("Would like a lower case letter in your password?");
-var charUpper = confirm("Would like an upper case letter in your password?");
-var charNumber = confirm("Would like a number in your password?");
-var charSpecial = confirm("Would like a special character in your password?");
+  if (charLower === true) {
+    charTotal += passParameter.LowerCase;
+  }
+  if (charUpper === true) {
+    charTotal += passParameter.UpperCase;
+  }
+  if (charNumber === true) {
+    charTotal += passParameter.Numbers;
+  }
+  if (charSpecial === true) {
+    charTotal += passParameter.Special;
+  }
+
+  var finalPassword = "";
+  for (let i = 0; i < pLength; i++) {
+    finalPassword += charTotal[Math.floor(Math.random() * charTotal.length)];
+  }
+  return finalPassword;
+}
 
 writePassword();
-
-//checks. Delete from final product.
-console.log(passLength);
-console.log(charLower);
-console.log(charUpper);
-console.log(charNumber);
-console.log(charSpecial);

@@ -12,6 +12,13 @@ Published website: (https://mesgt.github.io/Password_Generator/)
 
 ## Screenshots:
 
-<a href="https://github.com/mesgt/Password_Generator/issues/2#issue-779939363" alt="Password generator within parameters">Password generated within length parameters: </a>
+Password generator: <br>
+<img src="assets/images/Password_generator.png" alt="Password Generator img1" width="300" />
 
-<a href="https://github.com/mesgt/Password_Generator/issues/3#issue-779940267" alt="Password generator outside parameters">Password generated outside of length parameters: </a>
+
+Password generated within length parameters: <br>
+<img src="assets/images/Password_generator_inside.png" alt="Password Generator img2" width="300" />
+
+
+Password generated outside of length parameters: <br>
+<img src="assets/images/Password_generator_undefined.png" alt="Password Generator img3" width="300" />

@@ -20,15 +20,17 @@ With cybersecurity hackers all around us, your grandma's generic password will n
 
 
 Password generator: <br>
-<img src="./assets/images/Password_generator.png" alt="Password Generator img1" width="300" />
+
+
+<img src="assets\images\password_generator.PNG" width="400px"/>
 
 
 Password generated within length parameters: <br>
-<img src="./assets/images/Password_generator_inside.png" alt="Password Generator img2" width="300" />
+<img src="assets\images\Password_generator_inside.PNG" width="400px"/>
 
 
 Password generated outside of length parameters: <br>
-<img src="./assets/images/Password_generator_undefined.png" alt="Password Generator img3" width="300" />
+<img src="assets\images\Password_generator_undefined.PNG" width="400px"/>
 
 
 ## Future Development

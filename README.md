@@ -20,8 +20,6 @@ With cybersecurity hackers all around us, your grandma's generic password will n
 
 
 Password generator: <br>
-
-
 <img src="assets\images\password_generator.PNG" width="400px"/>
 
 
